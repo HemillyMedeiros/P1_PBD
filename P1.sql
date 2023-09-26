@@ -70,5 +70,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
- -- Chamar a função para encontrar a descrição mais longa por país
+-- Chamar a função para encontrar a descrição mais longa por país
 SELECT find_longest_description_by_country();
+
+--4.Os resultados obtidos pelos cursores devem ser armazenados numa tabela com os campos
+
+-- Criação da tabela para armazenar os resultados finais
+CREATE TABLE wine_analysis_results (
+    id SERIAL PRIMARY KEY,
+    nome_pais VARCHAR(255),
+    preco_medio NUMERIC,
+    descricao_mais_longa TEXT
+);
+
+
+
