@@ -7,6 +7,7 @@ CREATE TABLE wine_reviews (
     price NUMERIC
 );
 
+ALTER TABLE public.wine_reviews ALTER COLUMN points TYPE numeric;
 
 -- 2.Calcular o preço médio dos vinhos de cada país utilizando um cursor não vinculado.
 
@@ -38,7 +39,7 @@ $$ LANGUAGE plpgsql;
 
 -- Chamar a função para calcular o preço médio por país
 SELECT calculate_avg_price_by_country();
-]
+
 
 --3.Identificar a descrição mais longa para os vinhos de cada país utilizando um cursor vinculado.
 
@@ -82,6 +83,9 @@ CREATE TABLE wine_analysis_results (
     preco_medio NUMERIC,
     descricao_mais_longa TEXT
 );
+
+--5.Depois de os dados serem armazenados na tabela resultante,
+--você deve exportá-los no formato.csv
 
 
 
